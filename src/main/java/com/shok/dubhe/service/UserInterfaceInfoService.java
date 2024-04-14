@@ -1,5 +1,6 @@
 package com.shok.dubhe.service;
 
+import com.shok.dubhe.model.entity.InterfaceInfo;
 import com.shok.dubhe.model.entity.UserInterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserInterfaceInfoService extends IService<UserInterfaceInfo> {
 
+
+    void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add);
+
+    /**
+     * 调用次数统计
+     * @param userId
+     * @param interfaceInfoId
+     * @return
+     */
+    public boolean invokeInterfaceCount(long userId, long interfaceInfoId);
 }

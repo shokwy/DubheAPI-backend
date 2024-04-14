@@ -36,24 +36,9 @@ public class InterfaceInfoServiceImpl extends ServiceImpl<InterfaceInfoMapper, I
         String method = interfaceInfo.getMethod();
         Long userId = interfaceInfo.getUserId();
 
-        // 创建时，所有参数必须非空
-//        if (add) {
-//            if (StringUtils.isAnyBlank(content, job, place, education, loveExp) || ObjectUtils.anyNull(age, gender)) {
-//                throw new BusinessException(ErrorCode.PARAMS_ERROR);
-//            }
-//        }
         if (StringUtils.isNotBlank(description) && description.length() > 200) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "描述内容过长");
         }
-//        if (reviewStatus != null && !InterfaceInfoReviewStatusEnum.getValues().contains(reviewStatus)) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-//        }
-//        if (age != null && (age < 18 || age > 100)) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "年龄不符合要求");
-//        }
-//        if (gender != null && !InterfaceInfoGenderEnum.getValues().contains(gender)) {
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "性别不符合要求");
-//        }
     }
 }
 
